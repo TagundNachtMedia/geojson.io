@@ -2,7 +2,7 @@ const mapboxgl = require('mapbox-gl');
 
 require('qs-hash');
 const geojsonRewind = require('@mapbox/geojson-rewind');
-const MapboxDraw = require('@mapbox/mapbox-gl-draw').default;
+const MapboxDraw = require('@mapbox/mapbox-gl-draw');
 const MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
 
 const DrawLineString = require('../draw/linestring');
@@ -88,7 +88,7 @@ module.exports = function (context, readonly) {
 
   function map() {
     mapboxgl.accessToken =
-      'pk.eyJ1Ijoic3ZjLW9rdGEtbWFwYm94LXN0YWZmLWFjY2VzcyIsImEiOiJjbG5sMnExa3kxNTJtMmtsODJld24yNGJlIn0.RQ4CHchAYPJQZSiUJ0O3VQ';
+      'pk.eyJ1IjoiaGtvbSIsImEiOiJja3p5MjgxM2IwMTVvMnZtbDIwa3UxbmYxIn0.-ZELaj4uw_JNM1e4J1dLog';
 
     mapboxgl.setRTLTextPlugin(
       'https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.3/mapbox-gl-rtl-text.js',
@@ -97,13 +97,7 @@ module.exports = function (context, readonly) {
     );
 
     const projection = context.storage.get('projection') || DEFAULT_PROJECTION;
-    let activeStyle = context.storage.get('style') || DEFAULT_STYLE;
-
-    // handle previous users who had Streets selected
-    if (activeStyle === 'Streets') {
-      activeStyle = 'Standard';
-    }
-
+    const activeStyle = context.storage.get('style') || DEFAULT_STYLE;
     const { style } = styles.find((d) => d.title === activeStyle);
 
     context.map = new mapboxgl.Map({
