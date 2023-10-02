@@ -295,13 +295,13 @@ module.exports = function fileBar(context) {
 
   function downloadGeoJSON() {
     if (d3.event) d3.event.preventDefault();
-    const content = JSON.stringify(context.data.get('map'));
+    const content = JSON.stringify(context.data.get('map'), null, 4).replace(/\n/g, "\r\n");
     const meta = context.data.get('meta');
     saveAs(
       new Blob([content], {
         type: 'text/plain;charset=utf-8'
       }),
-      (meta && meta.name) || 'map.geojson'
+      (meta && meta.name) || 'gebaeude.geojson'
     );
   }
 
