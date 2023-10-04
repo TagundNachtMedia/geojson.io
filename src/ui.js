@@ -35,13 +35,13 @@ function ui(context) {
       )
       .attr('title', 'Toggle Sidebar')
       .on('click', () => {
-        const collapsed = !d3.select('.map').classed('md:basis-full');
-        d3.select('.map').classed('md:basis-0', !collapsed);
-        d3.select('.map').classed('md:basis-full', collapsed);
+        console.log("test");
+        const collapsed = !d3.select('.right').classed('maximize-panel');
+        d3.select('.right').classed('maximize-panel', collapsed);
 
         d3.select('.sidebar-handle-icon')
-          .classed('fa-caret-left', collapsed)
-          .classed('fa-caret-right', !collapsed);
+          .classed('fa-caret-left', !collapsed)
+          .classed('fa-caret-right', collapsed);
 
         setTimeout(() => {
           context.map.resize();
