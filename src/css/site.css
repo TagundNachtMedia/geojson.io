@@ -20,6 +20,11 @@ html {
   transition: all 200ms;
   -webkit-transition: all 200ms;
   box-shadow: rgba(0, 0, 0, 0.1) -2px 0px 0px;
+  max-width:inherit;
+  width:28%;
+}
+.maximize-panel {
+  width:80% !important;
 }
 
 body.fullscreen .map {
