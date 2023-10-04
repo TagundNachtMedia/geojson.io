@@ -295,7 +295,31 @@ module.exports = function fileBar(context) {
 
   function downloadGeoJSON() {
     if (d3.event) d3.event.preventDefault();
-    const content = JSON.stringify(context.data.get('map'), null, 4).replace(/\n/g, "\r\n");
+    function compare(a, b) {
+      if (a.properties.type < b.properties.type) {
+          return -1;
+      }
+      if (a.properties.type > b.properties.type) {
+          return 1;
+      }
+      if (a.properties.buchstabe < b.properties.buchstabe) {
+          return -1;
+      }
+      if (a.properties.buchstabe > b.properties.buchstabe) {
+          return 1;
+      }
+      // a must be equal to b
+      if (a.properties.nummer < b.properties.nummer) {
+          return -1;
+      }
+      if (a.properties.nummer > b.properties.nummer) {
+          return 1;
+      }
+      return 0;
+  }
+    var mapData = context.data.get('map');
+    mapData.features.sort(compare);
+    const content = JSON.stringify(mapData, null, 4).replace(/\n/g, "\r\n");
     const meta = context.data.get('meta');
     saveAs(
       new Blob([content], {
