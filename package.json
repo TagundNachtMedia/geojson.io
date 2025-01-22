@@ -13,8 +13,8 @@
     "@mapbox/gist-map-browser": "0.2.1",
     "@mapbox/github-file-browser": "0.6.1",
     "@mapbox/maki": "^8.0.1",
-    "@mapbox/mapbox-gl-draw": "1.4.1",
-    "@mapbox/mapbox-gl-geocoder": "^5.0.1",
+    "@mapbox/mapbox-gl-draw": "^1.5.0",
+    "@mapbox/mapbox-gl-geocoder": "^5.0.2",
     "@mapbox/polyline": "^1.1.1",
     "@placemarkio/tokml": "^0.3.3",
     "@popperjs/core": "^2.11.6",
@@ -26,6 +26,7 @@
     "@turf/circle": "^6.5.0",
     "@turf/length": "^6.5.0",
     "bowser": "^2.11.0",
+    "buffer": "^6.0.3",
     "clone": "0.1.16",
     "codemirror": "5.65.9",
     "csv2geojson": "5.1.2",
@@ -37,7 +38,7 @@
     "geojson-random": "0.1.0",
     "geojson2dsv": "0.1.0",
     "lodash": "^4.17.21",
-    "mapbox-gl": "2.13.0",
+    "mapbox-gl": "^3.5.2",
     "numeral": "^2.0.6",
     "osmtogeojson": "3.0.0-beta.5",
     "polytogeojson": "0.0.1",
@@ -48,7 +49,7 @@
     "topojson-client": "3.1.0",
     "topojson-server": "3.0.1",
     "wellknown": "0.5.0",
-    "wkx": "^0.4.1",
+    "wkx": "^0.5.0",
     "xtend": "3.0.0"
   },
   "devDependencies": {
@@ -102,8 +103,5 @@
   },
   "window": {
     "toolbar": false
-  },
-  "engines": {
-    "node": "14"
   }
 }

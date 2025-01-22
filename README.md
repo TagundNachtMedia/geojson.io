@@ -19,7 +19,7 @@ A fast, simple editor for map data. Read more on [Mapbox](https://www.mapbox.com
 
 You can interact with geojson.io programmatically via URL parameters. Here is an example of geojson encoded into the URL:
 
-http://geojson.io/#data=data:application/json,%7B%22type%22%3A%22LineString%22%2C%22coordinates%22%3A%5B%5B0%2C0%5D%2C%5B10%2C10%5D%5D%7D
+https://geojson.io/#data=data:application/json,%7B%22type%22%3A%22LineString%22%2C%22coordinates%22%3A%5B%5B0%2C0%5D%2C%5B10%2C10%5D%5D%7D
 
 Full API documentation can be found in [API.md](API.md).
 
@@ -32,8 +32,6 @@ Full API documentation can be found in [API.md](API.md).
 `npm start` uses `concurrently` to run `live-server` which will serve the project directory in your browser and listen for changes, `rollup` which will build the js and css bundles, and `npx tailwindcss` which builds `css/tailwind_dist.css` (including only the tailwind rules needed in the project)
 
 `rollup` can take several seconds to build before changes appear in the browser.
-
-If you get an error resolving dependencies related to `rollup` on newer versions of node, then try `npm install --force` and be sure to not commit changes to `package-lock.json`.
 
 ## Production Build & Deployment
 
