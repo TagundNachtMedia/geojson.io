@@ -31,7 +31,7 @@ jobs:
 
       - run: npm ci
       - run: npm run build
-
+      - run: echo "/node_modules" > .gitignore
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/main'
